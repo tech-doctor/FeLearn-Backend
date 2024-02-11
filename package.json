@@ -1,0 +1,22 @@
+{
+  "name": "felearn-backend",
+  "version": "1.0.0",
+  "description": "The server side program that serves the Felearn application. A learning platform for frontend technology, taught in pidgin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tech-doctor/FeLearn-Backend.git"
+  },
+  "author": "Isaac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tech-doctor/FeLearn-Backend/issues"
+  },
+  "homepage": "https://github.com/tech-doctor/FeLearn-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

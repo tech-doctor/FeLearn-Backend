@@ -1,0 +1,1 @@
+//Define route files to separate different API endpoints or web routes. This keeps your code modular and easy to maintain.
