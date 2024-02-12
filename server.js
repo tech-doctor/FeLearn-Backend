@@ -3,11 +3,18 @@ const http = require('http');
 const express = require('express');
 const app = express();
 
-
 // Example defining a route in Express
 app.get('/', (req, res) => {
     res.send('hello root node');
 });
+
+// Include route files
+const categoriesRoute = require('./routes/categories');
+const randomCoursesRoute = require('./routes/randomCourses');
+
+//use routes
+app.use('/categories', categoriesRoute);
+app.use('/randomCourses', randomCoursesRoute);
 
 
 const port = process.env.PORT || 3000; 

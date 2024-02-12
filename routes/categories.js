@@ -11,11 +11,11 @@ router.get('/css', (req, res) => {
 })
 
 
-router.get('/html', (req, res) => {
+router.get('/javascript', (req, res) => {
     res.send('this is the javascript courses route')
 })
 
-router.get('/html', (req, res) => {
+router.get('/jquery', (req, res) => {
     res.send('this is the jquery courses route')
 })
 
