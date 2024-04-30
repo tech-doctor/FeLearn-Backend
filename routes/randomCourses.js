@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const moment = require('moment');
-const {API_KEY, youtubeAPI}  = require('../static/api');
+const {API_KEY, youtubeAPI, channelId}  = require('../static/api');
   
   const fetchActivities = async (apiKey) => {
     try {
       const response = await youtubeAPI.get(`/activities`, {
         params: {
           part: 'snippet,contentDetails,id',
-          channelId: 'UCzroHLKLlfA-hR7S4if6qww',
+          channelId,
           maxResults: 40,
           key: apiKey
         }
@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  
+
 // export the router module so that index.js file can use it
 module.exports = router;
 
