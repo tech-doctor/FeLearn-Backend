@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const moment = require('moment');
-const {API_KEY, youtubeAPI, channelId}  = require('../static/api');
+const { shuffle } = require('../static/functions');
+const {API_KEY, youtubeAPI}  = require('../static/api');
+const {channelId }= require('../static/ids');
+
   
   const fetchActivities = async (apiKey) => {
     try {
@@ -9,7 +12,7 @@ const {API_KEY, youtubeAPI, channelId}  = require('../static/api');
         params: {
           part: 'snippet,contentDetails,id',
           channelId,
-          maxResults: 40,
+          maxResults: 300,
           key: apiKey
         }
       });
@@ -39,6 +42,7 @@ router.get('/', async (req, res) => {
     try {
         // assuming apiKey is passed as a query parameter
         const activities = await fetchActivities(API_KEY);
+        //const activities = youtubeAPI
         res.send(activities);
     } catch (error) {
       res.status(500).json({ error: 'Internal Server Error' });
@@ -49,21 +53,3 @@ router.get('/', async (req, res) => {
 // export the router module so that index.js file can use it
 module.exports = router;
 
-
-
-
-
-//Function that shuffles the array element.
-function  shuffle(arr) {
-  let arrLength = arr.length;
-  let temp;
-  let index;
-  while (arrLength > 0) {
-    index = Math.floor(Math.random() * arrLength);
-    arrLength--;
-    temp = arr[arrLength];
-    arr[arrLength] = arr[index];
-    arr[index] = temp;
-  }
-  return arr;
-}
