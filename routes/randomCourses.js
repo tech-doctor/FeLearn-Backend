@@ -4,7 +4,7 @@ const moment = require('moment');
 const { shuffle } = require('../static/functions');
 const {API_KEY, youtubeAPI}  = require('../static/api');
 const {channelId }= require('../static/ids');
-const app = express();
+//const app = express();
   
   const fetchActivities = async (apiKey) => {
     try {
@@ -37,12 +37,12 @@ const app = express();
     }
   };
 
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
+  // app.use((req, res, next) => {
+  //   res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
+  //   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
+  //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  //   next();
+  // });
 
 
   //Define a route
