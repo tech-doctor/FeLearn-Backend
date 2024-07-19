@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 const categoriesRoute = require('./routes/categories');
 const randomCoursesRoute = require('./routes/randomCourses');
 
+
 //use routes
 app.use('/categories', categoriesRoute);
 app.use('/randomCourses', randomCoursesRoute);

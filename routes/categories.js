@@ -16,7 +16,7 @@ const fetchCategories = async (apiKey, categoriesId) => {
             key: apiKey
         }
       });
-  
+
       const shuffledItems = shuffle(response.data.items);
       const finalResult = shuffledItems.map((item, index) => ({
         id: index + 1,
