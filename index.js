@@ -5,30 +5,27 @@ const app = express();
 
 const port = process.env.PORT; 
 
-// Example defining a route in Express
-
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
-//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//     next();
-//   });
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 
 app.get('/', (req, res) => {
-    res.send('hello root node');
+    res.send('FElearn API');
 });
 
 // Include route files
 const categoriesRoute = require('./routes/categories');
 const randomCoursesRoute = require('./routes/randomCourses');
-
+const selectedCourseRoutes = require('./routes/selected');
 
 //use routes
 app.use('/categories', categoriesRoute);
 app.use('/randomCourses', randomCoursesRoute);
-
-
+app.use('/selected', selectedCourseRoutes)
 
 
 app.listen(port, () => {

@@ -4,7 +4,6 @@ const moment = require('moment');
 const { shuffle } = require('../static/functions');
 const {API_KEY, youtubeAPI}  = require('../static/api');
 const {channelId }= require('../static/ids');
-//const app = express();
   
   const fetchActivities = async (apiKey) => {
     try {
@@ -12,7 +11,8 @@ const {channelId }= require('../static/ids');
         params: {
           part: 'snippet,contentDetails,id',
           channelId,
-          maxResults: 300,
+          // maxResults: 300,
+          maxResults: 50,
           key: apiKey
         }
       });
@@ -37,12 +37,6 @@ const {channelId }= require('../static/ids');
     }
   };
 
-  // app.use((req, res, next) => {
-  //   res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
-  //   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
-  //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  //   next();
-  // });
 
 
   //Define a route
